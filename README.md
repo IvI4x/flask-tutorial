@@ -1,5 +1,5 @@
 # flask-tutorial
-https://flask.palletsprojects.com/en/1.1.x/tutorial/
+https://flask.palletsprojects.com/en/1.1.x/tutorial/<br/>
 To run the application, remember:
 ```bash
 $ export FLASK_APP=flaskr
@@ -8,6 +8,6 @@ $ flask run
 ```
 
 ## Project Structure
-`flaskr/`, a Python package containing application code and files.
-`tests/`, a directory containing test modules.
+`flaskr/`, a Python package containing application code and files.<br/>
+`tests/`, a directory containing test modules.<br/>
 `instance/`, (not under version control) var + config files
