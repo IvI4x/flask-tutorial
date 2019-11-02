@@ -76,9 +76,10 @@ def load_logged_in_user():
         g.user = None
     else:
         cur = get_db().cursor()
-        g.user = cur.execute(
+        cur.execute(
             'SELECT * FROM "user" WHERE id = %s', (user_id,)
-        ).fetchone()
+        )
+        g.user = cur.fetchone()
 
 @bp.route('/logout')
 def logout():
