@@ -13,9 +13,9 @@ def index():
     db = get_db()
     cur = db.cursor()
     cur.execute(
-        'SELECT p.id, title, body, created, author_id, username'
+        'SELECT p.id, title, body, crafted, author_id, username'
         ' FROM post p JOIN "user" u ON p.author_id = u.id'
-        ' ORDER BY created DESC'
+        ' ORDER BY crafted DESC'
     )
     posts = cur.fetchall()
     cur.close()
@@ -51,7 +51,7 @@ def create():
 def get_post(id, check_author=True):
     cur = get_db().cursor()
     cur.execute(
-        'SELECT p.id, title, body, created, author_id, username'
+        'SELECT p.id, title, body, crafted, author_id, username'
         ' FROM post p JOIN "user" u ON p.author_id = u.id'
         ' WHERE p.id = %s', (id,)
     )

@@ -25,6 +25,7 @@ def init_db():
         cur = db.cursor()
         cur.execute(f.read().decode('utf8'))
         db.commit()
+        cur.close()
 
 @click.command('init-db')
 @with_appcontext
